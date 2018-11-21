@@ -90,6 +90,17 @@ def recreate_image(im_as_var):
     recreated_im = np.uint8(recreated_im).transpose(1, 2, 0)
     return recreated_im
 
+import os
+import numpy as np
+
+import torch
+import torch.nn as nn
+from torch.optim import Adam
+from torchvision import models
+
+import math
+from scipy.ndimage.filters import gaussian_filter
+
 class CNNLayerVisualization():
     """
         Produces an image that minimizes the loss of a convolution
